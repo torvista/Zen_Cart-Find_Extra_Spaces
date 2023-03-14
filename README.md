@@ -9,6 +9,8 @@ The tool can also fix these problems, but as always,
 Copy the single file to the root of your shop and manually (in the browser address bar) execute: 
 
 YOUR_SHOP/find_extra_spaces.php
+ ### Example Screenshot
+![find_extra_spaces](https://user-images.githubusercontent.com/4391026/224976273-4f314bce-e54a-405e-8045-f5e5df6c0083.gif)
 
 ## Changelog
 2023 March torvista: resurrected. HTML validated, some IDE recommendations, made EOF substitution not default, no functional changes.
