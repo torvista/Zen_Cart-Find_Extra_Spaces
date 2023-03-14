@@ -3,7 +3,7 @@
  * @package admin
  * @copyright Copyright 2005-2009, Andrew Berezin eCommerce-Service.com
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: found_extra_space.php v 1.2.3 08.12.2009 12:45:19 AndrewBerezin $
+ * @version $Id: find_extra_spaces.php v 1.2.4 2023 March 14 torvista
  */
 
 @ini_set('display_errors', '1');
@@ -46,7 +46,7 @@ echo '<table border="1" cellpadding="2" cellspacing="0">' . "\n";
 echo '<tr>';
 echo '  <th>Edit</th>';
 echo '  <th>File</th>';
-echo '  <th><a href="http://en.wikipedia.org/wiki/Byte-order_mark" target="_blank">BOM</a></th>';
+echo '  <th><a href="https://en.wikipedia.org/wiki/Byte-order_mark" target="_blank">BOM</a></th>';
 echo '  <th>Extra space<br />on top</th>';
 echo '  <th>Extra space<br />on bottom</th>';
 echo '  <th>Message</th>';
@@ -93,7 +93,6 @@ foreach ($files as $file) {
         }
       } elseif ($usingFTP) {
       	if (!empty($_POST['ftp']['Server']) && !empty($_POST['ftp']['User']) && !empty($_POST['ftp']['Password'])) {
-
       	}
       }
     } else {
@@ -143,14 +142,21 @@ if ($canWrite) {
 echo '</form>';
 //echo timefmt($time['read']) . "<br />\n";
 
-function rdir($path, $patterns=false, $flag=0) {
-  $files = array();
+/**
+ * @param $path
+ * @param bool $patterns
+ * @param int $flag
+ * @return array
+ */
+function rdir($path, $patterns=false, int $flag=0): array
+{
+  $files = [];
   if ($d = dir($path)) {
     while (false !== ($file = $d->read())) {
       if ($file == '.' or $file == '..') continue;
       $file = $d->path . '/' . $file;
       $is_dir = is_dir($file);
-      if ($patterns != false && !$is_dir) {
+      if ($patterns !== false && !$is_dir) {
         if (!preg_match($patterns, $file)) {
           continue;
         }
@@ -169,7 +175,12 @@ function rdir($path, $patterns=false, $flag=0) {
   return $files;
 }
 
-function timefmt($s) {
+/**
+ * @param $s
+ * @return string
+ */
+function timefmt($s): string
+{
   $m = floor($s/60);
   $s = $s - $m*60;
   $h = floor($m/60);
@@ -184,7 +195,11 @@ function timefmt($s) {
   return $tfmt;
 }
 
-function microtime_float() {
+/**
+ * @return float
+ */
+function microtime_float(): float
+{
    list($usec, $sec) = explode(" ", microtime());
    return ((float)$usec + (float)$sec);
 }
