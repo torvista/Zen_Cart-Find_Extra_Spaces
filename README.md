@@ -5,6 +5,9 @@ The tool can also fix these problems, but as always,
 - DO NOT TRUST ANY THIRD-PARTY CODE, USE AT YOUR OWN RISK
 - TEST IN YOUR DEVELOPMENT SERVER, and then copy the edited files to your  production site.
 
+## Compatibility
+Not dependent on the Zen Cart version. Code compatible with php7.4+.
+
 ## Use
 Copy the single file to the root of your shop and manually (in the browser address bar) execute: 
 
