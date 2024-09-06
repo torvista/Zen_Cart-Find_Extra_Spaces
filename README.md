@@ -6,7 +6,7 @@ The tool can also fix these problems, but as always,
 - TEST IN YOUR DEVELOPMENT SERVER, and then copy the edited files to your  production site.
 
 ## Compatibility
-Not dependent on the Zen Cart version. Code compatible with php7.4+.
+Not dependent on the Zen Cart version. Code compatible with php8.0+.
 
 ## Use
 Copy the single file to the root of your shop and manually (in the browser address bar) execute: 
@@ -16,7 +16,7 @@ YOUR_SHOP/find_extra_spaces.php
 ![find_extra_spaces](https://user-images.githubusercontent.com/4391026/224976273-4f314bce-e54a-405e-8045-f5e5df6c0083.gif)
 
 ## Changelog
-2023 March torvista: resurrected. HTML validated, some IDE recommendations, made EOF substitution not default, no functional changes.
-
+2024 09 torvista: IDE stuff.  
+2023 March torvista: resurrected. HTML validated, some IDE recommendations, made EOF substitution not default, no functional changes.  
 2005 Originally developed by Andrew Berezin, one of the great Zen Cart contributors, now sadly not with us: 
 https://github.com/AndrewBerezin
